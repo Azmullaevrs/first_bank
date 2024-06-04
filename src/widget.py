@@ -1,7 +1,7 @@
 from masks import mask_card, mask_account
 
 
-def mask_card_and_account(acc_number: str) -> str:
+def mask_account_card(acc_number: str) -> str:
     """Возвращет исходную строку с замаскированным номером карты/счета"""
     pay_system = ("Visa", "Maestro", "MasterCard")
     for i in acc_number.split():
@@ -14,13 +14,13 @@ def mask_card_and_account(acc_number: str) -> str:
             return f"Счет {mask_account(account)}"
 
 
-def parse_date(date_and_time: str) -> str:
+def get_date(date_and_time: str) -> str:
     """ строку с датой в виде дд.мм.гггг"""
     date = [i for i in date_and_time.split("T")]
     return ".".join(list(reversed([i for i in date[0].split("-")])))
 
 
 if __name__ == '__main__':
-    print(mask_card_and_account("Visa Platinum 7000 7922 8960 6361"))
-    print(mask_card_and_account("Счет 73654108430135874305"))
-    print(parse_date("2018-07-11T02:26:18.671407"))
+    print(mask_account_card("Visa Platinum 7000 7922 8960 6361"))
+    print(mask_account_card("Счет 73654108430135874305"))
+    print(get_date("2018-07-11T02:26:18.671407"))
