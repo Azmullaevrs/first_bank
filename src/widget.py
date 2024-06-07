@@ -15,7 +15,7 @@ def mask_account_card(acc_number: str) -> str:
 
 
 def get_date(date_and_time: str) -> str:
-    """ строку с датой в виде дд.мм.гггг"""
+    """строку с датой в виде дд.мм.гггг"""
     date = [i for i in date_and_time.split("T")]
     return ".".join(list(reversed([i for i in date[0].split("-")])))
 
