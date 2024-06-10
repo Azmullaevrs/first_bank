@@ -20,7 +20,7 @@ def get_date(date_and_time: str) -> str:
     return ".".join(list(reversed([i for i in date[0].split("-")])))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(mask_account_card("Visa Platinum 7000 7922 8960 6361"))
     print(mask_account_card("Счет 73654108430135874305"))
     print(get_date("2018-07-11T02:26:18.671407"))
